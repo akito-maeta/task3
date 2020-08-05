@@ -1,0 +1,29 @@
+<div class="container">
+	<div class="row">
+
+    	<div class="col-lg-3">
+    		<h2>User info</h2>
+    		<%= form_for(@user) do |f| %>
+
+			<div style="display:inline-flex">
+				<h5>Name</h5>
+				<%= f.text_field :name %>
+			</div>
+
+			<h5>Image</h5>
+			<%= f.attachment_field :profile_image %>
+			<br />
+
+			<div style="display:inline-flex">
+				<h5>Introduction</h5>
+				<%= f.text_area :introduction %>
+			</div>
+			<br />
+			<br />
+			<%= f.submit "Update User" %>
+			<% end %>
+		</div>
+		<div class="col-lg-9">
+    	</div>
+  	</div>
+</div>
