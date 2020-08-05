@@ -14,8 +14,6 @@
     <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
 
-    <%= yield %>
-
       <header class="navbar navbar-fixed-top navbar-inverse">
         <div class="container">
           <nav class="nav navbar-nav navbar-left">
@@ -29,15 +27,17 @@
               <li><%= link_to 'Books', books_path, class: "glyphicon glyphicon-book book" %></li>
               <li><%= link_to 'logout', destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-log-out log-out" %></li>
             <% else %>
-              <li><%= link_to 'Home', "/home", class: "glyphicon glyphicon-home home" %></li>
+              <li><%= link_to 'Home', "/", class: "glyphicon glyphicon-home home" %></li>
               <li><%= link_to 'About', "/home/about", class: "glyphicon glyphicon-link link" %></li>
-              <li><%= link_to 'Sign up', new_user_registration_path, class: "glyphicon glyphicon-edit edit" %></li>
+              <li><%= link_to 'sign up', new_user_registration_path, class: "glyphicon glyphicon-edit edit" %></li>
               <li><%= link_to 'login', new_user_session_path, class: "glyphicon glyphicon-log-in log-in" %></li>
             </ul>
             <% end %>
           </nav>
         </div>
       </header>
+
+      <%= yield %>
 
       <footer>
         CopyRight Infratop.inc
